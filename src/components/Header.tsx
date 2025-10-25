@@ -10,10 +10,10 @@ export const Header = () => {
         <Logo className="text-primary-foreground" />
         <nav className="flex gap-2">
           <Button asChild variant="ghost" className="text-primary-foreground hover:bg-primary-foreground/10">
-            <Link href="/login">Login</Link>
+            <Link href="/auth/login">Login</Link>
           </Button>
           <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
-            <Link href="/signup">Sign Up</Link>
+            <Link href="/auth/signup">Sign Up</Link>
           </Button>
         </nav>
       </div>

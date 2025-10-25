@@ -9,7 +9,7 @@ export default function SignupPage() {
         title="Create an Account"
         description="Enter your details to get started with Tickety."
         footerText="Already have an account?"
-        footerLink="/login"
+        footerLink="/auth/login"
         footerLinkText="Log In"
       >
         <SignupForm />

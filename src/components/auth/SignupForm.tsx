@@ -35,7 +35,6 @@ export function SignupForm() {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    // In a real app, you'd create a new user. Here, we'll just log them in.
     const user = {
         id: '1',
         email: values.email,

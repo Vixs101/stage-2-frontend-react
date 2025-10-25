@@ -9,7 +9,7 @@ export default function LoginPage() {
         title="Welcome Back"
         description="Sign in to continue to your dashboard."
         footerText="Don't have an account?"
-        footerLink="/signup"
+        footerLink="/auth/signup"
         footerLinkText="Sign Up"
       >
         <LoginForm />

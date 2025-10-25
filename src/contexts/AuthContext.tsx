@@ -22,28 +22,28 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     try {
-      const storedUser = localStorage.getItem('ticketyUser');
+      const storedUser = localStorage.getItem('ticketapp_session');
       if (storedUser) {
         setUser(JSON.parse(storedUser));
       }
     } catch (error) {
       console.error('Failed to parse user from localStorage', error);
-      localStorage.removeItem('ticketyUser');
+      localStorage.removeItem('ticketapp_session');
     } finally {
       setLoading(false);
     }
   }, []);
 
   const login = (userData: User) => {
-    localStorage.setItem('ticketyUser', JSON.stringify(userData));
+    localStorage.setItem('ticketapp_session', JSON.stringify(userData));
     setUser(userData);
     router.push('/dashboard');
   };
 
   const logout = () => {
-    localStorage.removeItem('ticketyUser');
+    localStorage.removeItem('ticketapp_session');
     setUser(null);
-    router.push('/login');
+    router.push('/');
   };
 
   const value = {

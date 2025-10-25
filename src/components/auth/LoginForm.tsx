@@ -33,7 +33,6 @@ export function LoginForm() {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    // In a real app, you'd verify credentials. Here, we'll just log in.
     const user = {
         id: '1',
         email: values.email,
