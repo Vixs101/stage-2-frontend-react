@@ -31,9 +31,9 @@ export function TicketItem({ ticket, onEdit, onDelete }: TicketItemProps) {
                 <TableCell>
                     <StatusBadge status={ticket.status} />
                 </TableCell>
-                <TableCell className="font-medium max-w-36 md:max-w-0">
-                    <div className="font-medium truncate">{ticket.title}</div>
-                    <div className="text-xs text-muted-foreground truncate max-w-xs">{ticket.description}</div>
+                <TableCell className="font-medium max-w-36 md:max-w-full">
+                    <div className="font-medium truncate ">{ticket.title}</div>
+                    <div className="text-xs</div> text-muted-foreground truncate max-w-xs">{ticket.description}</div>
                 </TableCell>
                 <TableCell className="hidden md:table-cell">
                     {formatDistanceToNow(new Date(ticket.createdAt), { addSuffix: true })}

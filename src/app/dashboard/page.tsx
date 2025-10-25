@@ -3,7 +3,9 @@
 
 import { StatCard } from '@/components/dashboard/StatCard';
 import { useTickets } from '@/hooks/useTickets';
-import { Ticket, Clock, CheckCircle2 } from 'lucide-react';
+import { Ticket, Clock, CheckCircle2, PlusCircle } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 export default function DashboardPage() {
   const { tickets, loading } = useTickets();
@@ -15,8 +17,16 @@ export default function DashboardPage() {
 
   return (
     <>
-      <div className="flex items-center">
+      <div className="flex items-center justify-between ">
         <h1 className="text-lg font-semibold md:text-2xl font-headline">Dashboard</h1>
+        <div className="flex items-center justify-end">
+                <Link href={"/tickets"} className="flex gap-2 h-8 px-3 items-center rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-colors">
+                    <PlusCircle className="h-3.5 w-3.5" />
+                    <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">
+                        New Ticket
+                    </span>
+                </Link>
+            </div>
       </div>
       <div
         className="flex flex-1 rounded-lg border border-dashed shadow-sm"

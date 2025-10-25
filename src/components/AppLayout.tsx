@@ -62,7 +62,7 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <div className="grid min-h-screen w-full lg:grid-cols-[280px_1fr]">
+    <div className="grid min-h-screen max-w-[1440px] xl:mx-auto w-full lg:grid-cols-[280px_1fr]">
       <div className="hidden border-r bg-muted/40 lg:block">
         <div className="flex h-full max-h-screen flex-col gap-2">
           <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
@@ -142,9 +142,14 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
             </DropdownMenuContent>
           </DropdownMenu>
         </header>
-        <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6 ">
+        <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6 overflow-y-clip">
           {children}
         </main>
+        <footer className="py-4 border-t bg-white">
+          <div className="container mx-auto px-4 md:px-6 text-center text-primary">
+            <p>&copy; {new Date().getFullYear()} Tickety. All rights reserved.</p>
+          </div>
+        </footer>
       </div>
     </div>
   );
