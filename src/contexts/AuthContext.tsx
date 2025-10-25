@@ -42,6 +42,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   const logout = () => {
     localStorage.removeItem('ticketapp_session');
+    localStorage.removeItem('ticketyTickets');
+    
     setUser(null);
     router.push('/');
   };
