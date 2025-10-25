@@ -27,12 +27,12 @@ export function TicketItem({ ticket, onEdit, onDelete }: TicketItemProps) {
     
     return (
         <>
-            <TableRow>
+            <TableRow className='hover:bg-white'>
                 <TableCell>
                     <StatusBadge status={ticket.status} />
                 </TableCell>
-                <TableCell className="font-medium">
-                    <div className="font-medium">{ticket.title}</div>
+                <TableCell className="font-medium max-w-36 md:max-w-0">
+                    <div className="font-medium truncate">{ticket.title}</div>
                     <div className="text-xs text-muted-foreground truncate max-w-xs">{ticket.description}</div>
                 </TableCell>
                 <TableCell className="hidden md:table-cell">
