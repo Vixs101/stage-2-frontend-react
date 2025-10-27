@@ -12,7 +12,6 @@ import { TicketItem } from "./TicketItem";
 import type { Ticket } from "@/lib/types";
 import { Skeleton } from "../ui/skeleton";
 import { ScrollArea } from "../ui/scroll-area";
-import { TicketDetailsModal } from "./TicketDetailsModal";
 
 interface TicketListProps {
     tickets: Ticket[];
@@ -22,7 +21,6 @@ interface TicketListProps {
 }
 
 export function TicketList({ tickets, onEdit, onDelete, loading }: TicketListProps) {
-    const [selectedTicketId, setSelectedTicketId] = useState<string | null>(null);
 
     if (loading) {
         return (
