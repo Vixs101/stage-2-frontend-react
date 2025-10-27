@@ -27,13 +27,13 @@ export function TicketItem({ ticket, onEdit, onDelete }: TicketItemProps) {
     
     return (
         <>
-            <TableRow className='hover:bg-white'>
-                <TableCell>
+            <TableRow className='cursor-pointer' onClick={() => onEdit(ticket)}>
+                <TableCell >
                     <StatusBadge status={ticket.status} />
                 </TableCell>
                 <TableCell className="font-medium max-w-36 md:max-w-full">
-                    <div className="font-medium truncate ">{ticket.title}</div>
-                    <div className="text-xs</div> text-muted-foreground truncate max-w-xs">{ticket.description}</div>
+                    <div className="font-medium truncate">{ticket.title}</div>
+                    <div className="text-xs text-muted-foreground truncate max-w-xs">{ticket.description}</div>
                 </TableCell>
                 <TableCell className="hidden md:table-cell">
                     {formatDistanceToNow(new Date(ticket.createdAt), { addSuffix: true })}
@@ -44,17 +44,19 @@ export function TicketItem({ ticket, onEdit, onDelete }: TicketItemProps) {
                 <TableCell>
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
-                            <Button aria-haspopup="true" size="icon" variant="ghost">
-                                <MoreHorizontal className="h-4 w-4" />
-                                <span className="sr-only">Toggle menu</span>
-                            </Button>
+                            <div onClick={(e) => e.stopPropagation()}>
+                                <Button aria-haspopup="true" size="icon" variant="ghost">
+                                    <MoreHorizontal className="h-4 w-4" />
+                                    <span className="sr-only">Toggle menu</span>
+                                </Button>
+                            </div>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end">
                             <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                            <DropdownMenuItem onSelect={() => onEdit(ticket)}>
+                            <DropdownMenuItem onSelect={(e) => {e.stopPropagation(); onEdit(ticket)}}>
                                 <Edit className="mr-2 h-4 w-4" /> Edit
                             </DropdownMenuItem>
-                            <DropdownMenuItem onSelect={() => setIsDeleteDialogOpen(true)} className="text-red-600">
+                            <DropdownMenuItem onSelect={(e) => {e.stopPropagation(); setIsDeleteDialogOpen(true)}} className="text-red-600">
                                 <Trash2 className="mr-2 h-4 w-4" /> Delete
                             </DropdownMenuItem>
                         </DropdownMenuContent>

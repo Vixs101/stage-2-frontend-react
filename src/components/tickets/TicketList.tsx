@@ -1,4 +1,5 @@
 
+import { useState, useMemo } from "react";
 import {
     Table,
     TableBody,
@@ -11,6 +12,7 @@ import { TicketItem } from "./TicketItem";
 import type { Ticket } from "@/lib/types";
 import { Skeleton } from "../ui/skeleton";
 import { ScrollArea } from "../ui/scroll-area";
+import { TicketDetailsModal } from "./TicketDetailsModal";
 
 interface TicketListProps {
     tickets: Ticket[];
@@ -20,6 +22,7 @@ interface TicketListProps {
 }
 
 export function TicketList({ tickets, onEdit, onDelete, loading }: TicketListProps) {
+    const [selectedTicketId, setSelectedTicketId] = useState<string | null>(null);
 
     if (loading) {
         return (
@@ -41,25 +44,27 @@ export function TicketList({ tickets, onEdit, onDelete, loading }: TicketListPro
     }
 
     return (
-        <ScrollArea className="h-full">
-            <Table>
-                <TableHeader>
-                    <TableRow>
-                        <TableHead>Status</TableHead>
-                        <TableHead>Title</TableHead>
-                        <TableHead className="hidden md:table-cell">Created</TableHead>
-                        <TableHead className="hidden md:table-cell">Last Updated</TableHead>
-                        <TableHead>
-                            <span className="sr-only">Actions</span>
-                        </TableHead>
-                    </TableRow>
-                </TableHeader>
-                <TableBody>
-                    {tickets.map((ticket) => (
-                        <TicketItem key={ticket.id} ticket={ticket} onEdit={onEdit} onDelete={onDelete} />
-                    ))}
-                </TableBody>
-            </Table>
-        </ScrollArea>
+        <>
+            <ScrollArea className="h-full">
+                <Table>
+                    <TableHeader>
+                        <TableRow>
+                            <TableHead>Status</TableHead>
+                            <TableHead>Title</TableHead>
+                            <TableHead className="hidden md:table-cell">Created</TableHead>
+                            <TableHead className="hidden md:table-cell">Last Updated</TableHead>
+                            <TableHead>
+                                <span className="sr-only">Actions</span>
+                            </TableHead>
+                        </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                        {tickets.map((ticket) => (
+                            <TicketItem key={ticket.id} ticket={ticket} onEdit={onEdit} onDelete={onDelete} />
+                        ))}
+                    </TableBody>
+                </Table>
+            </ScrollArea>
+        </>
     );
 }

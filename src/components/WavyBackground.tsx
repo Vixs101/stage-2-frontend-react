@@ -2,7 +2,7 @@
 export const WavyBackground = () => {
   return (
     <div className="absolute inset-0 overflow-hidden bg-primary">
-      <svg className="absolute bottom-0 left-0 right-0 w-full h-auto text-background"
+      <svg className="absolute bottom-[-1px] left-0 right-0 w-full h-auto text-background"
            width="100%"
            height="100"
            viewBox="0 0 1440 120"

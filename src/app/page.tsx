@@ -22,10 +22,10 @@ export default function Home() {
             </p>
             <div className="flex justify-center gap-4">
               <Button asChild size="lg" className="font-bold bg-accent text-accent-foreground hover:bg-accent/90">
-                <Link href="/signup">Get Started</Link>
+                <Link href="/auth/signup">Get Started</Link>
               </Button>
               <Button asChild size="lg" variant="secondary" className="font-bold">
-                <Link href="/login">Log In</Link>
+                <Link href="/auth/login">Log In</Link>
               </Button>
             </div>
           </div>
@@ -70,10 +70,10 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-r from-[#A2744A] to-[#EADDCA] rounded-full opacity-20 animate-pulse delay-200"></div>
-          <div className="absolute bottom-20 right-10 w-16 h-16 bg-gradient-to-r from-[#A2744A] to-[#EADDCA] rounded-full opacity-20 animate-pulse delay-1000 hidden md:block"></div>
-          <div className="absolute top-1/2 left-5 w-12 h-12 bg-gradient-to-r from-[#A2744A] to-[#EADDCA] rounded-full opacity-20 animate-pulse delay-1000"></div>
-          <div className="absolute top-20 right-10 w-20 h-20 bg-gradient-to-r from-[#A2744A] to-[#EADDCA] rounded-full opacity-20 animate-pulse delay-1000 hidden md:block"></div>
+          <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-r from-accent to-white rounded-full opacity-20 animate-pulse delay-200"></div>
+          <div className="absolute bottom-20 right-10 w-16 h-16 bg-gradient-to-r from-accent to-white rounded-full opacity-20 animate-pulse delay-1000 hidden md:block"></div>
+          <div className="absolute top-1/2 left-5 w-12 h-12 bg-gradient-to-r from-accent to-white rounded-full opacity-20 animate-pulse delay-1000"></div>
+          <div className="absolute top-20 right-10 w-20 h-20 bg-gradient-to-r from-accent to-white rounded-full opacity-20 animate-pulse delay-1000 hidden md:block"></div>
         </section>
       </main>
 

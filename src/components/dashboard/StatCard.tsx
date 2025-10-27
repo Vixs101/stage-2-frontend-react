@@ -17,7 +17,7 @@ export function StatCard({ title, value, icon: Icon, color, loading }: StatCardP
     <Card>
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
         <CardTitle className="text-sm font-medium">{title}</CardTitle>
-        <Icon className={cn("h-4 w-4 text-muted-foreground", color)} />
+        <Icon className={cn("h-6 w-6 text-muted-foreground", color)} />
       </CardHeader>
       <CardContent>
         {loading ? (
